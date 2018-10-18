@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.mkraskiewicz"
+    },
+    "jhipsterVersion": "5.4.2",
+    "applicationType": "monolith",
+    "baseName": "Virsin",
+    "packageName": "com.mkraskiewicz",
+    "packageFolder": "com/mkraskiewicz",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjFlMjMyMzY5ZTUzNzU0ODM0MWFjMTRmMTA3MTkwYmYzNGFmZDdjZTI1ZmQyMGZmNmNkM2ZkNTI5ZmU1MDVmNTZkZGE1MjkwYmY3MWJkMDFmYTkyYzNhODU4MmRmYjc1N2EwNDA2ZDUzYmFkZGUzY2EwMThlYjYwN2IyMTlhYzM=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
