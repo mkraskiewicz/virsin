@@ -20,6 +20,8 @@ import { VirsinEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { MainMenuComponent } from './layouts/main-menu/main-menu.component';
+import { CharacterSheetComponent } from './home/character-sheet/character-sheet.component';
 
 @NgModule({
     imports: [
@@ -33,7 +35,15 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         VirsinEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        FooterComponent,
+        MainMenuComponent,
+        CharacterSheetComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

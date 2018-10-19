@@ -7,6 +7,7 @@ import { HOME_ROUTE, HomeComponent } from './';
 @NgModule({
     imports: [VirsinSharedModule, RouterModule.forChild([HOME_ROUTE])],
     declarations: [HomeComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [RouterModule]
 })
 export class VirsinHomeModule {}
