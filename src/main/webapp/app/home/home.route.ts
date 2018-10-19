@@ -11,6 +11,11 @@ export const HOME_ROUTE: Route = {
     data: {
         authorities: [],
         pageTitle: 'Welcome, Java Hipster!',
-        children: characterRoutes
+        children: [
+            {
+                path: 'character',
+                loadChildren: './character-sheet/character-sheet.module#CharacterSheetModule'
+            }
+        ]
     }
 };

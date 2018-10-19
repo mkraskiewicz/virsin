@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
+import { CharacterSheetComponent } from 'app/home/character-sheet/character-sheet.component';
+import { HomeComponent } from 'app/home';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -9,12 +11,21 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     imports: [
         RouterModule.forRoot(
             [
-                ...LAYOUT_ROUTES,
                 {
                     path: 'admin',
                     loadChildren: './admin/admin.module#VirsinAdminModule'
+                },
+                ...LAYOUT_ROUTES,
+                {
+                    path: 'character',
+                    component: CharacterSheetComponent
+                },
+                {
+                    path: 'home',
+                    component: HomeComponent
                 }
             ],
+
             { useHash: true, enableTracing: DEBUG_INFO_ENABLED }
         )
     ],
