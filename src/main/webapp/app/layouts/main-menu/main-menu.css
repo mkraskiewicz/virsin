@@ -1,0 +1,13 @@
+small {
+    color: #8b4513;
+    font-family: Sherwood;
+}
+
+.framed {
+    display: inline-block;
+    border: solid 13px #ccb089;
+    background: url('../../../content/images/backgrounds/dirt.png');
+    border-image-source: url('../../../content/images/frames/double-frame.png');
+    border-image-slice: 10 10;
+    border-image-repeat: repeat;
+}
