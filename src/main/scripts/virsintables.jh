@@ -1,0 +1,48 @@
+entity Player {
+	imageUrl String,
+	experience Integer,
+	level Integer,
+	strength Integer,
+    condition Integer,
+    dexterity Integer,
+    luck Integer,
+    gold Integer
+}
+
+entity Item {
+	name String,
+    imageUrl String,
+	type ItemType,
+    equipped Boolean,
+    strBonus Integer,
+    conBonus Integer,
+    dexBonus Integer,
+    luckBonus Integer,
+    minDmg Integer,
+    maxDmg Integer
+}
+
+enum ItemType {
+    Weapon, Armor, Helmet, Shield, Cape, Boots,
+	Necklace, Ring
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Player{equipment} to Item
+
+}
+
+relationship OneToOne {
+	Player{user(login)} to User{Player}
+}
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

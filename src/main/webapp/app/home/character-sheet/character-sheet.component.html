@@ -1,3 +1,68 @@
-<p>
-  character-sheet works!
-</p>
+<div class="my-background my-font">
+
+    <div class="row">
+
+        <div class="col-sm-3" ><img class="framed"
+            src="../../../content/images/hooded.jpg" height="240" width="240"></div>
+
+        <div class="col-sm-2" >
+            <table>
+                <tr>
+                    <th><h2>{{ name }}</h2></th>
+                </tr>
+                <tr>
+                    <td><p>Level: {{ player.level }}<p></td>
+                </tr>
+                <tr>
+                    <td><p>Gold: {{ player.gold }}<p></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-3" ><h1>Equipment</h1></div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <table>
+                <tr>
+                    <th><h2>Statistics:</h2></th>
+                </tr>
+                <tr>
+                    <td><h3>Strength: {{ player.strength }}</h3>
+                    <p>Cost to upgrade:</p></td>
+
+                </tr>
+                <tr>
+                    <td><h3>Dexterity: {{ player.dexterity }}</h3>
+                        <p>Cost to upgrade:</p></td>
+
+                </tr>
+                <tr>
+                    <td><h3>Condition: {{ player.condition }}</h3>
+                        <p>Cost to upgrade:</p></td>
+
+                </tr>
+                <tr>
+                    <td><h3>Luck: {{ player.luck }}</h3>
+                        <p>Cost to upgrade:</p></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<!--<div class="my-background">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-6"><h1>TEST</h1></div>-->
+        <!--<div class="col-md-6"><h1>TEST 2</h1></div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-2"><h1>TEST</h1></div>-->
+        <!--<div class="col-md-10"><h1>TEST 2</h1></div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-4"><h1>TEST</h1></div>-->
+        <!--<div class="col-md-8"><h1>TEST 2</h1></div>-->
+    <!--</div>-->
+<!--</div>-->

@@ -1,0 +1,63 @@
+{
+    "name": "Item",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ItemType",
+            "fieldValues": "Weapon,Armor,Helmet,Shield,Cape,Boots,Necklace,Ring"
+        },
+        {
+            "fieldName": "equipped",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "strBonus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "conBonus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dexBonus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "luckBonus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "minDmg",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxDmg",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "player",
+            "otherEntityName": "player",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181019143851",
+    "entityTableName": "item",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

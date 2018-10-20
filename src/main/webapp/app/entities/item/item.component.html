@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span>Items</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-item" [routerLink]="['/item/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Item
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="items">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th><span>Image Url</span></th>
+            <th><span>Type</span></th>
+            <th><span>Equipped</span></th>
+            <th><span>Str Bonus</span></th>
+            <th><span>Con Bonus</span></th>
+            <th><span>Dex Bonus</span></th>
+            <th><span>Luck Bonus</span></th>
+            <th><span>Min Dmg</span></th>
+            <th><span>Max Dmg</span></th>
+            <th><span>Player</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of items ;trackBy: trackId">
+                <td><a [routerLink]="['/item', item.id, 'view' ]">{{item.id}}</a></td>
+                <td>{{item.name}}</td>
+                <td>{{item.imageUrl}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.equipped}}</td>
+                <td>{{item.strBonus}}</td>
+                <td>{{item.conBonus}}</td>
+                <td>{{item.dexBonus}}</td>
+                <td>{{item.luckBonus}}</td>
+                <td>{{item.minDmg}}</td>
+                <td>{{item.maxDmg}}</td>
+                <td>
+                    <div *ngIf="item.player">
+                        <a [routerLink]="['../player', item.player?.id, 'view' ]" >{{item.player?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/item', item.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/item', item.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'item/'+ item.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

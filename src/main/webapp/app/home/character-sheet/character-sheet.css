@@ -1,0 +1,34 @@
+.my-font {
+    display: inline-block;
+    color: #8b4513;
+    font-family: Sherwood;
+}
+
+.my-background {
+    display: block;
+    border: solid 13px #ccb089;
+    background: url('../../../content/images/backgrounds/dirt.png');
+    border-image-source: url('../../../content/images/frames/double-frame.png');
+    border-image-slice: 10 10;
+    border-image-repeat: repeat;
+}
+
+.framed {
+    display: block;
+    border: solid 13px #ccb089;
+    border-image-source: url('../../../content/images/frames/double-frame.png');
+    border-image-slice: 10 10;
+    border-image-repeat: repeat;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .hipster {
+        background: url('../../../content/images/hipster2x.png') no-repeat center top;
+        background-size: contain;
+    }
+}

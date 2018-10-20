@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-item-heading">Create or edit a Item</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!item.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="item.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="item.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_imageUrl">Image Url</label>
+                    <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                        [(ngModel)]="item.imageUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_type">Type</label>
+                    <select class="form-control" name="type" [(ngModel)]="item.type" id="field_type" >
+                        <option value="Weapon">Weapon</option>
+                        <option value="Armor">Armor</option>
+                        <option value="Helmet">Helmet</option>
+                        <option value="Shield">Shield</option>
+                        <option value="Cape">Cape</option>
+                        <option value="Boots">Boots</option>
+                        <option value="Necklace">Necklace</option>
+                        <option value="Ring">Ring</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_equipped">Equipped</label>
+                    <input type="checkbox" class="form-control" name="equipped" id="field_equipped"
+                        [(ngModel)]="item.equipped" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_strBonus">Str Bonus</label>
+                    <input type="number" class="form-control" name="strBonus" id="field_strBonus"
+                        [(ngModel)]="item.strBonus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_conBonus">Con Bonus</label>
+                    <input type="number" class="form-control" name="conBonus" id="field_conBonus"
+                        [(ngModel)]="item.conBonus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dexBonus">Dex Bonus</label>
+                    <input type="number" class="form-control" name="dexBonus" id="field_dexBonus"
+                        [(ngModel)]="item.dexBonus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_luckBonus">Luck Bonus</label>
+                    <input type="number" class="form-control" name="luckBonus" id="field_luckBonus"
+                        [(ngModel)]="item.luckBonus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_minDmg">Min Dmg</label>
+                    <input type="number" class="form-control" name="minDmg" id="field_minDmg"
+                        [(ngModel)]="item.minDmg" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_maxDmg">Max Dmg</label>
+                    <input type="number" class="form-control" name="maxDmg" id="field_maxDmg"
+                        [(ngModel)]="item.maxDmg" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_player">Player</label>
+                    <select class="form-control" id="field_player" name="player" [(ngModel)]="item.player" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="playerOption.id === item.player?.id ? item.player : playerOption" *ngFor="let playerOption of players; trackBy: trackPlayerById">{{playerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

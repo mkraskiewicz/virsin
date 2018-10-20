@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="item">
+            <h2><span>Item</span> {{item.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{item.name}}</span>
+                </dd>
+                <dt><span>Image Url</span></dt>
+                <dd>
+                    <span>{{item.imageUrl}}</span>
+                </dd>
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{item.type}}</span>
+                </dd>
+                <dt><span>Equipped</span></dt>
+                <dd>
+                    <span>{{item.equipped}}</span>
+                </dd>
+                <dt><span>Str Bonus</span></dt>
+                <dd>
+                    <span>{{item.strBonus}}</span>
+                </dd>
+                <dt><span>Con Bonus</span></dt>
+                <dd>
+                    <span>{{item.conBonus}}</span>
+                </dd>
+                <dt><span>Dex Bonus</span></dt>
+                <dd>
+                    <span>{{item.dexBonus}}</span>
+                </dd>
+                <dt><span>Luck Bonus</span></dt>
+                <dd>
+                    <span>{{item.luckBonus}}</span>
+                </dd>
+                <dt><span>Min Dmg</span></dt>
+                <dd>
+                    <span>{{item.minDmg}}</span>
+                </dd>
+                <dt><span>Max Dmg</span></dt>
+                <dd>
+                    <span>{{item.maxDmg}}</span>
+                </dd>
+                <dt><span>Player</span></dt>
+                <dd>
+                    <div *ngIf="item.player">
+                        <a [routerLink]="['/player', item.player?.id, 'view']">{{item.player?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item', item.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

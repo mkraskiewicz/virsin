@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-player-heading">Create or edit a Player</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!player.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="player.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_imageUrl">Image Url</label>
+                    <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                        [(ngModel)]="player.imageUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_experience">Experience</label>
+                    <input type="number" class="form-control" name="experience" id="field_experience"
+                        [(ngModel)]="player.experience" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_level">Level</label>
+                    <input type="number" class="form-control" name="level" id="field_level"
+                        [(ngModel)]="player.level" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_strength">Strength</label>
+                    <input type="number" class="form-control" name="strength" id="field_strength"
+                        [(ngModel)]="player.strength" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_condition">Condition</label>
+                    <input type="number" class="form-control" name="condition" id="field_condition"
+                        [(ngModel)]="player.condition" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dexterity">Dexterity</label>
+                    <input type="number" class="form-control" name="dexterity" id="field_dexterity"
+                        [(ngModel)]="player.dexterity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_luck">Luck</label>
+                    <input type="number" class="form-control" name="luck" id="field_luck"
+                        [(ngModel)]="player.luck" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gold">Gold</label>
+                    <input type="number" class="form-control" name="gold" id="field_gold"
+                        [(ngModel)]="player.gold" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="player.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === player.user?.id ? player.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

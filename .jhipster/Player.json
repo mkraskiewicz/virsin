@@ -1,0 +1,62 @@
+{
+    "name": "Player",
+    "fields": [
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "experience",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "strength",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "condition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dexterity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "luck",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "gold",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "player"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "equipment",
+            "otherEntityName": "item",
+            "otherEntityRelationshipName": "player"
+        }
+    ],
+    "changelogDate": "20181019143850",
+    "entityTableName": "player",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
