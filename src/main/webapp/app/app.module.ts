@@ -22,6 +22,7 @@ import * as moment from 'moment';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 import { MainMenuComponent } from './layouts/main-menu/main-menu.component';
 import { CharacterSheetComponent } from './home/character-sheet/character-sheet.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { CharacterSheetComponent } from './home/character-sheet/character-sheet.
         VirsinCoreModule,
         VirsinHomeModule,
         VirsinAccountModule,
-        VirsinEntityModule
+        VirsinEntityModule,
+        BrowserAnimationsModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

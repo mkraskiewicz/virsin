@@ -1,13 +1,33 @@
-small {
-    color: #8b4513;
-    font-family: Sherwood;
-}
-
-.framed {
-    display: inline-block;
+.my-background {
+    display: block;
     border: solid 13px #ccb089;
     background: url('../../../content/images/backgrounds/dirt.png');
     border-image-source: url('../../../content/images/frames/double-frame.png');
-    border-image-slice: 10 10;
+    border-image-slice: 9 9;
     border-image-repeat: repeat;
+}
+
+.mybutton {
+    font-family: Sherwood;
+    color: peru;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    background: transparent;
+    background-image: url('../../../content/images/unclicked.png');
+    display: inline-block;
+    border: none;
+    width: 275px;
+    height: 51px;
+}
+mybutton:hover {
+    cursor: url('../../../content/images/cursors/cursor_shiny.png'), auto;
+}
+.mybutton:focus {
+    background: transparent;
+    font-family: Sherwood;
+    color: sienna;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    background-image: url('../../../content/images/clicked.png');
+    display: inline-block;
+    width: 275px;
+    height: 51px;
 }
